@@ -1,0 +1,150 @@
+// Variables for navigation
+$navHeight:70px;
+
+.menu--extend {
+    grid-area: center;
+    display: flex;
+    margin: 0;
+    align-items: center;
+    list-style: none;
+    padding-left: 0;
+    justify-content: center;
+    font-size: 1em;
+
+    .link {
+        text-decoration: none;
+
+    }
+}
+
+.nav {
+    box-sizing: border-box;
+    display: flex;
+    flex-basis: 0;
+    font-size: 1em;
+    height: $navHeight;
+    position: fixed;
+    margin: 0;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    justify-content: space-between;
+    align-items: center;
+
+    &__logo {
+        filter: brightness(0);
+    }
+
+    &__menu {
+        @extend .menu--extend;
+    }
+
+    &__link {
+        color: $font-color;
+        border-bottom: 2px solid transparent;
+        transition: border-color 0.3s;
+
+        &:hover {
+            border-color: $light-blue;
+        }
+    }
+
+}
+
+@media screen and(min-width:320px) and (max-width:1199px) {
+    .nav {
+        width: 100%;
+        z-index: 1;
+        padding: 10px 20px;
+
+        &__link {
+            position: relative;
+
+            &:before,
+            &:after {
+                display: block;
+                content: '';
+                position: absolute;
+                background-color: $pink;
+                width: 50px;
+                height: 2px;
+                top: calc(50% - 1px);
+            }
+
+            &:before {
+                left: -10px;
+                transform: translateX(-100%)
+            }
+
+            &:after {
+                right: -10px;
+                transform: translateX(100%)
+            }
+        }
+
+        &__menu {
+            flex-direction: column;
+            justify-content: space-around;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            z-index: 0;
+            background: rgba(255, 255, 255, 0.95);
+            transition: transform 0.5s;
+            transform: translateY(-100%);
+            padding-top: $navHeight;
+            box-sizing: border-box;
+
+            &.show {
+                transform: translateY(0);
+            }
+
+            .button {
+                display: block;
+            }
+        }
+
+        &__logo {
+            position: relative;
+            z-index: 3;
+        }
+
+        &__hamburger {
+            position: relative;
+            z-index: 3;
+            cursor: pointer;
+
+        }
+
+        &__button {
+            display: none;
+        }
+    }
+}
+
+@media screen and (min-width:1200px) {
+    .nav {
+        width: 100%;
+        padding: 0 $container-margin;
+
+        &__menu {
+            .button {
+                display: none;
+            }
+        }
+
+        &__link {
+            margin: 0 20px;
+            padding-bottom: 10px;
+            font-weight: 600;
+        }
+
+        &__hamburger {
+            display: none
+        }
+
+    }
+}

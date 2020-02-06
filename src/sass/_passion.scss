@@ -1,0 +1,81 @@
+.passion {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center;
+
+    &__description {
+        margin-top: 0;
+    }
+
+    &__image {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    &__title {
+        margin-bottom: 0;
+        font-weight: 600;
+        position: absolute;
+        left: 50%;
+        bottom: 10px;
+        transform: translateX(-50%);
+
+    }
+
+    &__background {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 70%;
+        margin: 0 15%;
+        position: relative;
+        border-radius: 35%;
+        overflow: hidden;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            padding-top: 100%;
+            background-image: url("/src/images/Pattern_horizontal.png");
+            background-position: center;
+            background-size: 155%;
+            background-repeat: no-repeat;
+            filter: contrast(0);
+        }
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .passion {
+        justify-content: space-between;
+
+        &__card {
+            width: 30%;
+        }
+    }
+
+
+}
+
+@media screen and (max-width: 767px) {
+    .passion {
+        flex-direction: column;
+        justify-content: center;
+
+        &__card {
+            width: 100%;
+            padding: 10px 0;
+            max-width: 300px;
+        }
+
+        &__image {
+            width: 80px;
+
+        }
+    }
+}

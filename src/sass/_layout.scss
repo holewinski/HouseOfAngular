@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "Monsterrat";
+    src: url("/src/fonts/Montserrat-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Monsterrat";
+    src: url("/src/fonts/Montserrat-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "Monsterrat";
+    src: url("/src/fonts/Montserrat-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Monsterrat";
+    src: url("/src/fonts/Montserrat-Bold.ttf") format("truetype");
+    font-weight: 700;
+}
+
+
+
+// Sizes for main layout
+$container-margin: (100% - 64%)/2;
+
+body {
+    font-family: "Monsterrat";
+    margin: 0;
+    color: $font-color;
+    font-weight: 400;
+}
+
+* {
+    line-height: 1.4em;
+}
+
+
+
+.button {
+    background-color: $pink;
+    color: #fff;
+    font-size: 1.1em;
+    border-radius: 5px;
+    border: none;
+    padding: 8px 25px;
+    cursor: pointer;
+    font-weight: 500;
+
+    &--shadow {
+        box-shadow: 0 1px 3px 0 $grey;
+
+    }
+}
+
+
+
+.body {
+    margin-top: $navHeight;
+    display: grid;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "header header header"". main ."". footer .";
+}
+
+.header {
+    grid-area: header;
+    display: grid;
+    grid-template-rows: auto;
+    grid-template-areas: "left center right";
+
+    &__image {
+        width: 100%;
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+    &__container {
+        color: #fff;
+        padding: 20px 0 30px;
+        grid-area: center;
+        align-self: end;
+    }
+
+    &__text {
+        font-size: 0.9em;
+    }
+}
+
+.main {
+    grid-area: main;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.section {
+    margin: 60px 0;
+
+    &__title {
+        font-size: 2em;
+        width: 100%;
+        position: relative;
+        display: block;
+        text-align: center;
+        padding-bottom: 10px;
+
+        &:after {
+            content: "";
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: $pink;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translate(-50%);
+        }
+    }
+}
+
+@media screen and (min-width: 1200px) {
+
+    body {
+        font-size: 0.7em;
+    }
+
+    .body {
+        grid-template-columns: 20% 60% 20%;
+    }
+
+    .header {
+        grid-template-columns: 18% 64% 18%;
+
+        &__container {
+            width: 70%;
+        }
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    body {
+        font-size: 1em;
+    }
+
+    .body {
+        grid-template-columns: 20px auto 20px;
+    }
+
+    .header {
+        grid-template-columns: 20px auto 20px;
+
+        &__container {
+            width: 100%;
+        }
+    }
+}
+
+$brands-padding: 30px;

@@ -1,0 +1,76 @@
+.brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    &__card {
+        box-sizing: border-box;
+        position: relative;
+        border: 1px solid transparent;
+        border-top-color: $grey;
+        border-left-color: $grey;
+
+        &:after {
+            content: "";
+            padding-top: 60%;
+            display: block;
+        }
+
+        &:hover {
+            .brands__logo {
+                filter: grayscale(0);
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        max-width: 65%;
+        max-height: 50%;
+        width: 100%;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        transition: filter 0.3s;
+        filter: grayscale(1);
+    }
+}
+
+@media screen and (min-width: 768px) {
+
+
+    .brands {
+        &__card {
+            width: 25%;
+
+            &:nth-of-type(4n) {
+                border-right-color: $grey;
+            }
+
+            &:nth-of-type(n + 13) {
+                border-bottom-color: $grey;
+            }
+        }
+    }
+
+}
+
+@media screen and (max-width: 767px) {
+
+
+    .brands {
+        &__card {
+            width: 50%;
+
+            &:nth-of-type(2n) {
+                border-right-color: $grey;
+            }
+
+            &:nth-of-type(n + 15) {
+                border-bottom-color: $grey;
+            }
+        }
+    }
+
+}
