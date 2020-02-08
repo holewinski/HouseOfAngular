@@ -134,7 +134,7 @@ body {
 
 @media screen and (min-width: 1200px) {
   body {
-    font-size: 0.7em;
+    font-size: 0.9em;
   }
   .body {
     -ms-grid-columns: 20% 60% 20%;
@@ -342,6 +342,7 @@ body {
   left: 50%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
+  height: 30%;
 }
 
 .passion__title {
@@ -368,8 +369,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 70%;
-  margin: 0 15%;
+  width: 60%;
+  margin: 0 20%;
   position: relative;
   border-radius: 35%;
   overflow: hidden;
@@ -413,9 +414,6 @@ body {
     width: 100%;
     padding: 10px 0;
     max-width: 300px;
-  }
-  .passion__image {
-    width: 80px;
   }
 }
 
@@ -618,6 +616,7 @@ body {
 
 .form__field {
   position: relative;
+  margin: 20px 0;
 }
 
 .form__field::-webkit-input-placeholder {
@@ -657,9 +656,9 @@ body {
 
 .form__select .form__input {
   margin-top: 0;
-  -webkit-appearance: button;
-     -moz-appearance: button;
-          appearance: button;
+  -moz-appearance: button;
+       appearance: button;
+  -webkit-appearance: none;
   font-family: 'Monsterrat';
 }
 
@@ -724,6 +723,9 @@ body {
   resize: none;
   font-family: inherit;
   margin-top: 10px;
+  font-size: 0.9em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .form__submit {

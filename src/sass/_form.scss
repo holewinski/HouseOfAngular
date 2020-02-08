@@ -15,6 +15,7 @@ $form-padding:30px;
 
     &__field {
         position: relative;
+        margin: 20px 0;
 
         &::placeholder {
             font-weight: 400;
@@ -41,6 +42,7 @@ $form-padding:30px;
         .form__input {
             margin-top: 0;
             appearance: button;
+            -webkit-appearance: none;
             font-family: 'Monsterrat';
 
             option {
@@ -101,6 +103,8 @@ $form-padding:30px;
         resize: none;
         font-family: inherit;
         margin-top: 10px;
+        font-size: 0.9em;
+        box-sizing: border-box;
     }
 
     &__submit {
