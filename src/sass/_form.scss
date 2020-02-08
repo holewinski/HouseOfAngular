@@ -8,6 +8,7 @@ $form-padding:30px;
     padding: $form-padding;
     border: 1px solid $grey;
     margin: auto;
+    counter-reset: option;
 
     &__label {
         font-weight: 600;
@@ -45,9 +46,24 @@ $form-padding:30px;
             -webkit-appearance: none;
             font-family: 'Monsterrat';
 
-            option {
+            &:focus {
+                &~.form__options {
+                    transition: 0;
+                    visibility: visible;
 
-                font-family: 'Monsterrat';
+                    .form__option {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+
+                border-bottom:1px solid $grey;
+            }
+
+
+            option {
+                display: none;
+
             }
 
 
@@ -67,6 +83,26 @@ $form-padding:30px;
             align-items: center;
             pointer-events: none;
         }
+    }
+
+    &__options {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transform: translateY(100%);
+        width: 100%;
+        z-index: 100;
+        visibility: hidden;
+        transition: 0.1s;
+        counter-reset: option;
+    }
+
+    &__option {
+        transition: 0.2s;
+        transform: translateY(-100%);
+        opacity: 0;
+        border-top: none !important;
+
     }
 
     &__checkbox {
@@ -105,6 +141,7 @@ $form-padding:30px;
         margin-top: 10px;
         font-size: 0.9em;
         box-sizing: border-box;
+        background-color: #fff;
     }
 
     &__submit {

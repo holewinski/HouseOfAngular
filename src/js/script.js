@@ -1,7 +1,8 @@
 //Variables
 const hamburger = document.getElementById('hamburger'),
     menu = document.getElementById('menu'),
-    banner = document.getElementById('banner');
+    banner = document.getElementById('banner'),
+    formSelect = [...document.getElementsByClassName('form__select')];
 
 //Declaration of functions
 
@@ -9,7 +10,6 @@ function changeBanner() {
     let windowWidth = window.innerWidth;
     switch (true) {
         case windowWidth >= 768 && windowWidth < 1200:
-            console.log('tablet')
             banner.src = "src/images/tablet_banner_photo.png";
             break;
         case windowWidth < 768:
@@ -26,9 +26,28 @@ function setClass(element, className) {
     const list = element.classList;
     list.contains(className) ? list.remove(className) : list.add(className);
 }
+formSelect.forEach(element => {
+    const select = element.getElementsByTagName('select')[0],
+        options = [...element.getElementsByTagName('option')],
+        optionsContainer = document.createElement('div'),
+        optionElement = document.createElement('div');
+    optionsContainer.className = 'form__options';
+    optionElement.className = 'form__option form__input';
+    options.forEach((option, index) => {
+
+        const optionNode = optionElement.cloneNode(true);
+        optionNode.style.transitionDelay = `${0.1 * index}s`
+        optionNode.onclick = () => {
+            select.selectedIndex = option.index;
+        };
+
+        optionNode.innerText = option.innerText;
+        optionsContainer.appendChild(optionNode);
+    })
+    element.appendChild(optionsContainer);
+});
 
 //Calling functions
-
 changeBanner();
-hamburger.addEventListener("click", () => setClass(menu, 'show'))
-window.addEventListener("resize", () => changeBanner());
+hamburger.onclick = () => setClass(menu, 'show');
+window.onclick = resize = () => changeBanner();
