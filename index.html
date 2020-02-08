@@ -22,11 +22,11 @@
             <li><a class="nav__link link" href="#">Blog</a></li>
             <li><a class="nav__link link" href="#">Hire Us</a></li>
             <li>
-                <button class="nav__button button button--shadow">Login</button>
+                <button class="nav__button button button--shadow" onclick="showError()">Login</button>
 
             </li>
         </ul>
-        <button class="nav__button button button--shadow">Login</button>
+        <button class="nav__button button button--shadow" onclick="showError()">Login</button>
         <img class="nav__hamburger" id="hamburger" src="src/images/icon_hamburger.svg">
     </nav>
     <div class="body">
@@ -73,10 +73,10 @@
                         to go.</p>
                 </div>
             </section>
-            <section class="section writeus " id="form">
+            <section class="section writeus ">
                 <h1 class="section__title">Write Us</h1>
 
-                <form class="writeus__form form">
+                <form class="writeus__form form" id="form">
                     <h3 class="form__title">Potrzebujesz pomocy z projektem?</h3>
                     <p class="form__description">Napisz do nas, jesteśmy profesjonalistami w temacie programowania,
                         consultingu i audytu IT.</p>
@@ -204,8 +204,19 @@
             </span>
             <p class="footer__copyright">Copyright &copy; 2013-2019 ValueAdd. All rights reserved</p>
         </footer>
-        </divclass>
+    </div>
+    <div class="error-message" id="error-message">
+        <div class="error-message__container">
+            <h1 class="error-message__title">Uwaga, uwaga błąd!</h1>
+            <p>
+                Strona testowa.
+            </p>
+            <p>To co zostało kliknięte...</p>
+            <p>No cóż...</p>
+            <h2>Nie działa</h2>
+        </div>
 
+    </div>
 </body>
 <script src="src/js/script.js" type="text/javascript"></script>
 
