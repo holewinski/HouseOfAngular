@@ -10,6 +10,7 @@ $navHeight:70px;
     padding-left: 0;
     justify-content: center;
     font-size: 1em;
+    z-index: 0;
 
     .link {
         text-decoration: none;
@@ -22,15 +23,19 @@ $navHeight:70px;
     display: flex;
     flex-basis: 0;
     font-size: 1em;
-    height: $navHeight;
-    position: fixed;
+    // height: $navHeight;
+    border: 1px solid $grey;
+
+    position: sticky;
     margin: 0;
-    z-index: 1;
+    z-index: 2;
     top: 0;
     left: 0;
     background-color: #fff;
     justify-content: space-between;
     align-items: center;
+
+
 
     &__logo {
         filter: brightness(0);
@@ -91,7 +96,7 @@ $navHeight:70px;
             left: 0;
             height: 100vh;
             width: 100%;
-            z-index: 0;
+            z-index: -1;
             background: rgba(255, 255, 255, 0.95);
             transition: transform 0.5s;
             transform: translateY(-100%);
@@ -128,7 +133,7 @@ $navHeight:70px;
 @media screen and (min-width:1200px) {
     .nav {
         width: 100%;
-        padding: 0 $container-margin;
+        padding: 1em $container-margin;
 
         &__menu {
             .button {

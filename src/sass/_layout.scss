@@ -52,7 +52,7 @@ body {
 }
 
 .body {
-  margin-top: $navHeight;
+  // margin-top: $navHeight;
   display: grid;
   grid-template-rows: auto auto auto;
   grid-template-areas: "header header header"". main ."". footer .";
